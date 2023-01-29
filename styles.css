@@ -1,0 +1,219 @@
+@font-face {
+    font-family: "norse-bold";
+    src: url("assets/Norse-Bold.otf");
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+:root {
+    --base-color: white;
+    --base-text-color: black;
+    --text-grey: grey;
+    --text-ligh-grey: lightgray;
+    --soft-grey: #F9FAFB;
+    --ligth-border-grey: #E5E8EB;
+    --accent-green: #596D48;
+    --soft-shadow: 0 2px 8px 1px lightgray;
+}
+
+@media (prefers-color-scheme: ligth) {
+    :root {
+        --base-color: black;
+        --base-text-color: white;
+        --text-grey: grey;
+        --text-ligh-grey: lightgray;
+        --soft-grey: #141414;
+        --ligth-border-grey: #E5E8EB;
+        --accent-green: #596D48;
+        --soft-shadow: 0 2px 8px 1px #141414;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--soft-grey);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--base-text-color);
+}
+
+main {
+    height: 100%;
+    display: flex;
+}
+
+a {
+    color: inherit;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 40vw;
+}
+
+.img-wrapper > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    justify-content: center;
+}
+
+.img-credits {
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-credits span {
+    color: var(--text-ligh-grey);
+}
+
+.logo-band {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    padding: 1rem;
+}
+
+.logo-band span {
+    color: inherit;
+}
+
+.logo-band > img {
+    width: max(5rem, 5vw);
+}
+
+.logo-band > span {
+    font-size: max(5rem, 5vw);
+    font-family: 'norse-bold';
+    padding-top: 1.5rem;
+}
+
+.content-wrapper {
+    width: 60vw;
+    height: 100%;
+}
+
+.content-wrapper > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-banner {
+    width: 70%;
+    padding: 2rem;
+}
+
+.info-banner h2:first-child {
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    background-color: var(--base-color);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2rem;
+    box-shadow: var(--soft-shadow);
+}
+
+fieldset label {
+    color: var(--text-grey)
+}
+
+fieldset > p {
+    font-size: 0.8rem;
+    color: var(--text-grey);
+}
+
+.inline-inputs {
+    display: flex;
+    gap: 3rem;
+}
+
+.inline-inputs div {
+    color: var(--text-grey);
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid var(--base-text-color);
+    width: 100%;
+    line-height: 1.5rem;
+    color: var(--base-text-color);
+    background-color: var(--base-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--base-text-color);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.submit-btn {
+    border: none;
+    margin: 2rem;
+    padding: .6rem 2.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    color: var(--base-text-color);
+    border: 2px solid var(--accent-green);
+    background-color: var(--base-color);
+    transform: scale(1);
+
+    transition: transform 0.3s, background-color 0.3s;
+    -webkit-transition: transform 0.3s, background-color 0.3s;
+}
+
+.submit-btn:hover {
+    color: var(--base-color);
+    background-color: var(--accent-green);
+    transform: scale(1.03);
+
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.submit-btn + p {
+    margin-left: 2rem;
+}
+
+.submit-btn + p a {
+    color: var(--accent-green);
+    font-weight: bold;
+    text-decoration: none;
+}

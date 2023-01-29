@@ -4,7 +4,86 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
         <title>Sign-up-form</title>
     </head>
-    <body></body>
+    <body>
+        <main>
+            <div class="img-wrapper">
+                <img src="assets/leafs.webp" />
+                <div class="logo-band">
+                    <img src="assets/odin-logo.png" />
+                    <span>ODIN</span>
+                </div>
+                <div class="img-credits">
+                    <span
+                        >Photo by
+                        <a href="https://unsplash.com/@haliewestphoto"
+                            >Halie West</a
+                        >
+                        on <a href="https://unsplash.com">Unsplash</a></span
+                    >
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div>
+                    <div class="info-banner">
+                        <h2>
+                            This is not a real online service! You know you need
+                            something like this in your life to help you realize
+                            your deepest dreams.<br />
+                            Sign up now to get started.
+                        </h2>
+                        <h2>You know you want to.</h2>
+                    </div>
+                    <form>
+                        <fieldset>
+                            <h2>Let's do this!</h2>
+                            <div class="inline-inputs">
+                                <div>
+                                    <label for="first-name">FIRST NAME</label>
+                                    <input id="first-name" type="text" />
+                                </div>
+                                <div>
+                                    <label for="last-name">LAST NAME</label>
+                                    <input id="last-name" type="text" />
+                                </div>
+                            </div>
+                            <div class="inline-inputs">
+                                <div>
+                                    <label for="email">EMAIL</label>
+                                    <input id="email" type="email" />
+                                </div>
+                                <div>
+                                    <label for="phone-number"
+                                        >PHONE NUMBER</label
+                                    >
+                                    <input id="phone-number" type="tel" />
+                                </div>
+                            </div>
+                            <div class="inline-inputs">
+                                <div>
+                                    <label for="password">PASSWORD</label>
+                                    <input id="password" type="password" />
+                                </div>
+                                <div>
+                                    <label for="confirm-password"
+                                        >CONFIRM PASSWORD</label
+                                    >
+                                    <input
+                                        id="confirm-password"
+                                        type="password" />
+                                </div>
+                            </div>
+                            <p>
+                                Fields marked with an asterisk (*) are required
+                            </p>
+                        </fieldset>
+                        <button class="submit-btn">Create Account</button>
+                        <p>Already have an account? <a href="#">Log in</a></p>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
