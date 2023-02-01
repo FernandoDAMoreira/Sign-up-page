@@ -18,7 +18,7 @@ button:focus {
     --soft-grey: #F9FAFB;
     --ligth-border-grey: #E5E8EB;
     --accent-green: #596D48;
-    --soft-shadow: 0 2px 8px 1px lightgray;
+    --soft-shadow: 0 4px 8px -8px black
 }
 
 @media (prefers-color-scheme: ligth) {
@@ -30,7 +30,7 @@ button:focus {
         --soft-grey: #141414;
         --ligth-border-grey: #E5E8EB;
         --accent-green: #596D48;
-        --soft-shadow: 0 2px 8px 1px #141414;
+        --soft-shadow: 0 4px 8px -8px white
     }
 }
 
@@ -41,15 +41,21 @@ button:focus {
 }
 
 html, body {
-    height: 100%;
-    background-color: var(--soft-grey);
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     color: var(--base-text-color);
 }
 
-main {
-    height: 100%;
+body {
     display: flex;
+    justify-content: center;
+}
+
+main {
+    background-color: var(--soft-grey);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1440px;
 }
 
 a {
@@ -58,7 +64,7 @@ a {
 
 .img-wrapper {
     position: relative;
-    width: 40vw;
+    width: 40%;
 }
 
 .img-wrapper > img {
@@ -68,46 +74,56 @@ a {
     justify-content: center;
 }
 
-.img-credits {
+.logo-band-wrapper {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 100%;
     width: 100%;
-    bottom: 2%;
+}
+
+.logo-band {
+    width: 100%;
     display: flex;
     justify-content: center;
+    
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    padding: 1rem;
+    height: max(7rem, 4vw);
+    font-size: 6rem
+}
+
+.logo-band > img {
+    height: 100%;
+}
+
+.logo-band > span {
+    color: inherit;
+    font-family: 'norse-bold';
+}
+
+.img-credits {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 }
 
 .img-credits span {
     color: var(--text-ligh-grey);
-}
-
-.logo-band {
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, .6);
-    color: white;
-    padding: 1rem;
-}
-
-.logo-band span {
-    color: inherit;
-}
-
-.logo-band > img {
-    width: max(5rem, 5vw);
-}
-
-.logo-band > span {
-    font-size: max(5rem, 5vw);
-    font-family: 'norse-bold';
-    padding-top: 1.5rem;
+    padding: .5rem;
 }
 
 .content-wrapper {
-    width: 60vw;
+    width: 60%;
     height: 100%;
 }
 
@@ -132,7 +148,7 @@ fieldset {
     border: none;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.5rem;
     padding: 2rem;
     box-shadow: var(--soft-shadow);
 }
@@ -148,24 +164,56 @@ fieldset > p {
 
 .inline-inputs {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .inline-inputs div {
-    color: var(--text-grey);
-    font-size: .8rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    justify-content: end;
+    flex-grow: 1;
+
+    color: var(--text-grey);
+    max-width: 27rem;
+    height: 2.5rem;
 }
 
-input {
+.inline-inputs label {
+    padding-bottom: 0.1rem;
+    position: absolute;
+    transition: transform 600ms ease;
+}
+
+.inline-inputs label:hover {
+    cursor: text;
+}
+
+.inline-inputs input:required + label::after {
+    content: '*';
+    color: red;
+    margin-left: .1rem;
+}
+
+.inline-inputs input:focus + label,
+.inline-inputs input:not(:placeholder-shown) + label {
+    transform: 
+        scale(0.8)
+        translateY(-1.2rem) 
+        translateX(-12%);
+    cursor: default;
+}
+
+.inline-inputs input {
     border: none;
-    border-bottom: 1px solid var(--base-text-color);
+    border-bottom: 2px solid var(--text-grey);
     width: 100%;
-    line-height: 1.5rem;
     color: var(--base-text-color);
     background-color: var(--base-color);
+}
+
+.inline-inputs input:focus {
+    border-bottom: 3px solid var(--accent-green);
 }
 
 input:-webkit-autofill,
@@ -183,9 +231,17 @@ button:hover {
     cursor: pointer;
 }
 
-.submit-btn {
-    border: none;
+.submit-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
     margin: 2rem;
+    gap: 2rem;
+}
+
+.submit-wrapper > button {
+    max-width: 15rem;
+    border: none;
     padding: .6rem 2.5rem;
     font-weight: bold;
     font-size: 1.1rem;
@@ -199,7 +255,7 @@ button:hover {
     -webkit-transition: transform 0.3s, background-color 0.3s;
 }
 
-.submit-btn:hover {
+.submit-wrapper > button:hover {
     color: var(--base-color);
     background-color: var(--accent-green);
     transform: scale(1.03);
@@ -208,12 +264,32 @@ button:hover {
     -webkit-transition: all 0.3s;
 }
 
-.submit-btn + p {
-    margin-left: 2rem;
-}
-
-.submit-btn + p a {
+.submit-wrapper > p a {
     color: var(--accent-green);
     font-weight: bold;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-wrapper {
+        height: 30vh;
+        width: 100%;
+    }
+    .content-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    .img-credits {
+        align-items: end;
+        font-size: 0.7rem
+    }
+}
+
+@media only screen and (max-width: 1000px) {   
+    .info-banner {
+        width: auto;
+    }
+    .inline-inputs {
+        flex-direction: column;
+    }
 }

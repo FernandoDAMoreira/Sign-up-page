@@ -11,9 +11,11 @@
         <main>
             <div class="img-wrapper">
                 <img src="assets/leafs.webp" />
-                <div class="logo-band">
-                    <img src="assets/odin-logo.png" />
-                    <span>ODIN</span>
+                <div class="logo-band-wrapper">
+                    <div class="logo-band">
+                        <img src="assets/odin-logo.png" />
+                        <span>ODIN</span>
+                    </div>
                 </div>
                 <div class="img-credits">
                     <span
@@ -41,46 +43,76 @@
                             <h2>Let's do this!</h2>
                             <div class="inline-inputs">
                                 <div>
+                                    <input
+                                        id="first-name"
+                                        type="text"
+                                        placeholder=" "
+                                        maxlength="20"
+                                        required />
                                     <label for="first-name">FIRST NAME</label>
-                                    <input id="first-name" type="text" />
                                 </div>
                                 <div>
+                                    <input
+                                        id="last-name"
+                                        type="text"
+                                        placeholder=" "
+                                        maxlength="20" />
                                     <label for="last-name">LAST NAME</label>
-                                    <input id="last-name" type="text" />
                                 </div>
                             </div>
                             <div class="inline-inputs">
                                 <div>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        placeholder=" "
+                                        required />
                                     <label for="email">EMAIL</label>
-                                    <input id="email" type="email" />
                                 </div>
                                 <div>
+                                    <input
+                                        id="phone-number"
+                                        type="tel"
+                                        placeholder=" " />
                                     <label for="phone-number"
                                         >PHONE NUMBER</label
                                     >
-                                    <input id="phone-number" type="tel" />
                                 </div>
                             </div>
                             <div class="inline-inputs">
                                 <div>
+                                    <input
+                                        id="password"
+                                        type="password"
+                                        placeholder=" "
+                                        pattern=".{8,}"
+                                        minlength="8"
+                                        required />
                                     <label for="password">PASSWORD</label>
-                                    <input id="password" type="password" />
                                 </div>
                                 <div>
+                                    <input
+                                        id="confirm-password"
+                                        type="password"
+                                        placeholder=" "
+                                        pattern=".{8,}"
+                                        minlength="8"
+                                        required />
                                     <label for="confirm-password"
                                         >CONFIRM PASSWORD</label
                                     >
-                                    <input
-                                        id="confirm-password"
-                                        type="password" />
                                 </div>
                             </div>
                             <p>
                                 Fields marked with an asterisk (*) are required
                             </p>
                         </fieldset>
-                        <button class="submit-btn">Create Account</button>
-                        <p>Already have an account? <a href="#">Log in</a></p>
+                        <div class="submit-wrapper">
+                            <button class="submit-btn">Create Account</button>
+                            <p>
+                                Already have an account? <a href="#">Log in</a>
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
