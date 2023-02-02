@@ -134,7 +134,7 @@ a {
 
 .info-banner {
     width: 70%;
-    padding: 2rem;
+    margin: 2rem;
 }
 
 .info-banner h2:first-child {
@@ -197,7 +197,7 @@ fieldset label {
 .inline-inputs input:not(:placeholder-shown) + label {
     transform: 
         scale(0.8)
-        translateY(-1.2rem) 
+        translateY(-1.7rem) 
         translateX(-12%);
     cursor: default;
 }
@@ -206,6 +206,7 @@ fieldset label {
     border: none;
     border-bottom: 2px solid var(--text-grey);
     width: 100%;
+    font-size: 1.2rem;
     color: var(--base-text-color);
     background-color: var(--base-color);
 }
@@ -277,73 +278,40 @@ button:hover {
 .theme-switch-wrapper {
     position: absolute;
     z-index: 2;
-    padding: 8px;
     right: 0;
 }
 
-.switch {
+.theme-toggle {
     display: inline-block;
     position: relative;
-    width: 48px;
-    height: 28px;
+    height: 25px;
+    width: 25px;
+    border-radius: 0 0 0 8px;
+    border-bottom: 1px solid var(--base-text-color);
+    border-left: 1px solid var(--base-text-color);
+    background-color: var(--base-color);
+
+    transition: 300ms;
+    -webkit-transition: 300ms;
 }
 
 /* Hide default HTML checkbox */
-.switch input {
+.theme-toggle input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The slider */
-.slider {
+.theme-toggle img {
     position: absolute;
+    padding: 4px;
+    width: 100%;
+}
+
+.theme-toggle:hover {
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--accent-green);
-    border: 1px solid var(--base-text-color);
-    -webkit-transition: 300ms;
-    transition: 300ms;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    margin: 2px;
-
-    -webkit-transition: 300ms;
-    transition: 300ms;
-
-    border: 1px double var(--base-text-color);
-    background-color: var(--base-color);
-    background-image: url(assets/sun.svg);
-    background-size: 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.switch-checkbox:checked + .slider:before {
-    --translate-value: 20px;
-    -webkit-transform: translateX(var(--translate-value));
-    -ms-transform: translateX(var(--translate-value));
-    transform: translateX(var(--translate-value));
-
-    background-image: url(assets/moon.svg);
-
-}
-  
-/* Rounded sliders */
-.slider.round {
-    border-radius: 24px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+    transform: scale(1.05);
+    box-shadow: 0 0 4px 0 var(--base-text-color);
 }
 
 @media only screen and (max-width: 768px) {

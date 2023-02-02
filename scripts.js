@@ -1,6 +1,16 @@
 function toggleTheme(checkbox) {
+    console.log(checkbox)
     const root = document.documentElement;
-    root.className = checkbox.checked ? "dark" : "ligth";
+    const themeIcon = document.getElementById('theme-icon');
+
+    if(checkbox.checked){
+        root.className = "dark";
+        themeIcon.src = "assets/moon.svg";
+    }
+    else {
+        root.className = "ligh";
+        themeIcon.src = "assets/sun.svg";
+    }
 }
 
 function validateForm() {
