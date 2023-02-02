@@ -5,10 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js"></script>
         <title>Sign-up-form</title>
     </head>
     <body>
         <main>
+            <div class="theme-switch-wrapper">
+                <label class="switch">
+                    <input
+                        class="switch-checkbox"
+                        type="checkbox"
+                        onclick="toggleTheme(this)" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
             <div class="img-wrapper">
                 <img src="assets/leafs.webp" />
                 <div class="logo-band-wrapper">
@@ -28,93 +38,94 @@
                 </div>
             </div>
             <div class="content-wrapper">
-                <div>
-                    <div class="info-banner">
-                        <h2>
-                            This is not a real online service! You know you need
-                            something like this in your life to help you realize
-                            your deepest dreams.<br />
-                            Sign up now to get started.
-                        </h2>
-                        <h2>You know you want to.</h2>
-                    </div>
-                    <form>
-                        <fieldset>
-                            <h2>Let's do this!</h2>
-                            <div class="inline-inputs">
-                                <div>
-                                    <input
-                                        id="first-name"
-                                        type="text"
-                                        placeholder=" "
-                                        maxlength="20"
-                                        required />
-                                    <label for="first-name">FIRST NAME</label>
-                                </div>
-                                <div>
-                                    <input
-                                        id="last-name"
-                                        type="text"
-                                        placeholder=" "
-                                        maxlength="20" />
-                                    <label for="last-name">LAST NAME</label>
-                                </div>
-                            </div>
-                            <div class="inline-inputs">
-                                <div>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        placeholder=" "
-                                        required />
-                                    <label for="email">EMAIL</label>
-                                </div>
-                                <div>
-                                    <input
-                                        id="phone-number"
-                                        type="tel"
-                                        placeholder=" " />
-                                    <label for="phone-number"
-                                        >PHONE NUMBER</label
-                                    >
-                                </div>
-                            </div>
-                            <div class="inline-inputs">
-                                <div>
-                                    <input
-                                        id="password"
-                                        type="password"
-                                        placeholder=" "
-                                        pattern=".{8,}"
-                                        minlength="8"
-                                        required />
-                                    <label for="password">PASSWORD</label>
-                                </div>
-                                <div>
-                                    <input
-                                        id="confirm-password"
-                                        type="password"
-                                        placeholder=" "
-                                        pattern=".{8,}"
-                                        minlength="8"
-                                        required />
-                                    <label for="confirm-password"
-                                        >CONFIRM PASSWORD</label
-                                    >
-                                </div>
-                            </div>
-                            <p>
-                                Fields marked with an asterisk (*) are required
-                            </p>
-                        </fieldset>
-                        <div class="submit-wrapper">
-                            <button class="submit-btn">Create Account</button>
-                            <p>
-                                Already have an account? <a href="#">Log in</a>
-                            </p>
-                        </div>
-                    </form>
+                <div class="info-banner">
+                    <h2>
+                        This is not a real online service! You know you need
+                        something like this in your life to help you realize
+                        your deepest dreams.<br />
+                        Sign up now to get started.
+                    </h2>
+                    <h2>You know you want to.</h2>
                 </div>
+                <form
+                    action="#"
+                    method="post"
+                    onsubmit="return validateForm();">
+                    <fieldset>
+                        <h2>Let's do this!</h2>
+                        <div class="inline-inputs">
+                            <div>
+                                <input
+                                    id="first-name"
+                                    type="text"
+                                    name="first_name"
+                                    placeholder=" "
+                                    maxlength="20"
+                                    required />
+                                <label for="first-name">FIRST NAME</label>
+                            </div>
+                            <div>
+                                <input
+                                    id="last-name"
+                                    type="text"
+                                    name="last_name"
+                                    placeholder=" "
+                                    maxlength="20" />
+                                <label for="last-name">LAST NAME</label>
+                            </div>
+                        </div>
+                        <div class="inline-inputs">
+                            <div>
+                                <input
+                                    id="email"
+                                    type="email"
+                                    name="email"
+                                    placeholder=" "
+                                    required />
+                                <label for="email">EMAIL</label>
+                            </div>
+                            <div>
+                                <input
+                                    id="phone-number"
+                                    type="tel"
+                                    name="phone_number"
+                                    placeholder=" " />
+                                <label for="phone-number">PHONE NUMBER</label>
+                            </div>
+                        </div>
+                        <div class="inline-inputs passwords">
+                            <div>
+                                <input
+                                    id="password"
+                                    type="password"
+                                    placeholder=" "
+                                    name="password"
+                                    required />
+                                <label for="password">PASSWORD</label>
+                            </div>
+                            <div>
+                                <input
+                                    id="confirm-password"
+                                    type="password"
+                                    placeholder=" "
+                                    required />
+                                <label for="confirm-password"
+                                    >CONFIRM PASSWORD</label
+                                >
+                            </div>
+                        </div>
+                        <p id="password-error" class="error"></p>
+                        <p class="required-message">
+                            Fields marked with an asterisk (*) are required
+                        </p>
+                    </fieldset>
+                    <div class="submit-wrapper">
+                        <button type="submit" class="submit-button">
+                            Create Account
+                        </button>
+                        <p>Already have an account? <a href="#">Log in</a></p>
+                    </div>
+                </form>
             </div>
         </main>
     </body>
