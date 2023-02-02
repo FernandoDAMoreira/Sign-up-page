@@ -7,7 +7,7 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+    outline: transparent;
 }
 
 :root {
@@ -52,12 +52,11 @@ body {
 }
 
 main {
-    position: relative;
     background-color: var(--soft-grey);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1300px;
 }
 
 a {
@@ -73,7 +72,6 @@ a {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    justify-content: center;
 }
 
 .logo-band-wrapper {
@@ -91,7 +89,6 @@ a {
     width: 100%;
     display: flex;
     justify-content: center;
-    
     background-color: rgba(0, 0, 0, .6);
     color: white;
     padding: 1rem;
@@ -206,7 +203,7 @@ fieldset label {
     border: none;
     border-bottom: 2px solid var(--text-grey);
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--base-text-color);
     background-color: var(--base-color);
 }
