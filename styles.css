@@ -52,6 +52,7 @@ body {
 }
 
 main {
+    position: relative;
     background-color: var(--soft-grey);
     display: flex;
     flex-wrap: wrap;
@@ -168,7 +169,6 @@ fieldset label {
     flex-direction: column;
     justify-content: end;
     flex-grow: 1;
-
     color: var(--text-grey);
     max-width: 27rem;
     height: 2.5rem;
@@ -243,7 +243,6 @@ button:hover {
     border: 2px solid var(--accent-green);
     background-color: var(--base-color);
     transform: scale(1);
-
     transition: 300ms;
     -webkit-transition: 300ms;
 }
@@ -280,11 +279,8 @@ button:hover {
     position: relative;
     height: 25px;
     width: 25px;
-    border-radius: 0 0 0 8px;
-    border-bottom: 1px solid var(--base-text-color);
-    border-left: 1px solid var(--base-text-color);
-    background-color: var(--base-color);
-
+    margin: 4px;
+    border-radius: 8px;
     transition: 300ms;
     -webkit-transition: 300ms;
 }
@@ -304,7 +300,6 @@ button:hover {
 
 .theme-toggle:hover {
     cursor: pointer;
-    transform: scale(1.05);
     box-shadow: 0 0 4px 0 var(--base-text-color);
 }
 
@@ -320,6 +315,9 @@ button:hover {
     .img-credits {
         align-items: end;
         font-size: 0.7rem
+    }
+    .theme-toggle {
+        background-color: var(--base-color);
     }
 }
 
